@@ -192,10 +192,4 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md), choose an available issue, reproduce it
 - **Frontend cannot reach API:** locally, verify backend port 5000 and the Vite `/api` proxy. For deployments, set `VITE_API_URL` to the backend URL plus `/api`.
 - **CORS errors:** set backend `CLIENT_URL` to the exact frontend origin; multiple origins are comma-separated.
 - **Port conflict:** choose a free backend `PORT`; Vite is configured for 5173 and may need its own CLI port override if occupied.
-- **Missing dependency:** install root, backend, and frontend lockfile dependencies with the three `npm ci` commands above.
-- **Vercel build fails:** confirm Vercel root `frontend`, build `npm run build`, output `dist`, and all required frontend environment variables.
-- **Render startup fails:** confirm root `backend`, build `npm ci`, start `npm start`, valid MongoDB connectivity, and platform-provided `PORT` configuration.
 
-## License
-
-The repository includes an [MIT License](LICENSE).
