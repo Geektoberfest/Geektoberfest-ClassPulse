@@ -184,12 +184,3 @@ Eight deliberately introduced exercises cover dashboard data, search, class disp
 ## Contributing
 
 Read [CONTRIBUTING.md](CONTRIBUTING.md), choose an available issue, reproduce it locally, and open a focused pull request with the issue ID and checks performed. GitHub issues have not been created or assigned by this repository audit.
-
-## Troubleshooting
-
-- **Mongo connection fails:** confirm the URI, database user/password encoding, Atlas network access, and that this is a development database. Do not paste the full URI into an issue.
-- **API does not start:** the server connects to MongoDB before listening. Check `MONGODB_URI` and `JWT_SECRET`; production requires the secret length to be at least 32 characters.
-- **Frontend cannot reach API:** locally, verify backend port 5000 and the Vite `/api` proxy. For deployments, set `VITE_API_URL` to the backend URL plus `/api`.
-- **CORS errors:** set backend `CLIENT_URL` to the exact frontend origin; multiple origins are comma-separated.
-- **Port conflict:** choose a free backend `PORT`; Vite is configured for 5173 and may need its own CLI port override if occupied.
-
