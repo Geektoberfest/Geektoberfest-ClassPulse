@@ -177,7 +177,5 @@ The repository includes a Vercel SPA rewrite and backend support for a platform-
 
 Before deploying the frontend, verify the backend starts with its database configuration and that `/api/health` responds. The current health route is a liveness response and does not independently report database status. Verify CORS and authenticated API calls against the deployed origins; no live deployment is claimed here.
 
-## Intentional Geekstober issues
 
-Eight deliberately introduced exercises cover dashboard data, search, class display, form validation, attendance UI state, API error feedback, and activity refresh behavior. They are bounded functional defects; authentication, authorization, password handling, and database write permissions were not deliberately weakened. See [CONTRIBUTING.md](CONTRIBUTING.md) for each issue's difficulty, reproduction, expected/actual behavior, and acceptance criteria.
 
