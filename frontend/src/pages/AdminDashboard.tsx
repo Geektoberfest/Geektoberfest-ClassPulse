@@ -28,9 +28,10 @@ export function AdminDashboard() {
   const curriculum = useApi(() => api.get<Curriculum[]>("/curriculum"), []);
   const activities = useApi(() => api.get<Activity[]>("/activities"), []);
 
-  const students = users.data?.filter((user) => user.role === "faculty") ?? [];
+  // Fixed issue : 
+  const students = users.data?.filter((user) => user.role === "student") ?? [];
   const faculty = users.data?.filter((user) => user.role === "faculty") ?? [];
-
+  
   const attendanceChart = attendance.data?.bySubject.map((item) => ({
     name: item.subject.code,
     percent: item.percent,
