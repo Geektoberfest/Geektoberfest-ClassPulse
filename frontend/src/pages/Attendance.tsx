@@ -206,7 +206,7 @@ function FacultyAttendance() {
           variant="secondary"
           onClick={() => {
             const all: Record<string, "present" | "absent"> = {};
-            students.slice(0, 1).forEach((student) => {
+            students.forEach((student) => {
               all[student._id] = "present";
             });
             setMarks((current) => ({ ...current, ...all }));
