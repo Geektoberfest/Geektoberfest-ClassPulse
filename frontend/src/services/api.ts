@@ -17,9 +17,15 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
       ...options,
     });
 
-    const data = await response.json().catch(() => ({}));
+    // fixed code
+    const data = (await response.json().catch(() => ({}))) as {
+      message?: string;
+      error?: string;
+    };
     if (!response.ok) {
-      throw new Error(data.error || "Unable to load academic data. Please try again later.");
+      throw new Error(
+        data.message || data.error || "Unable to load academic data. Please try again later."
+      );
     }
     return data as T;
   } catch (error) {
