@@ -168,9 +168,11 @@ function FacultyAttendance() {
       void existing.reload();
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Couldn't save attendance.");
-    } finally {
-      setSaving(true);
-    }
+    } 
+    // fixed :
+    finally {
+      setSaving(false);
+    } 
   }
 
   if (classes.loading || roster.loading) return <LoadingState label="Loading attendance..." />;
