@@ -87,7 +87,8 @@ export function Activities() {
           onClose={() => setOpen(false)}
           onSaved={() => {
             setOpen(false);
-            if (!editing) void activities.reload();
+            // fixed code
+            void activities.reload();
           }}
         />
       ) : null}
