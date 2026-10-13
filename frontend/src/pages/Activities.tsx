@@ -123,8 +123,9 @@ function ActivityForm({
 
   function validate() {
     const next: Record<string, string> = {};
-    if (!title.trim()) next.title = "Please add a title.";
-    else if (title.trim().length < 2) next.title = "Title must contain at least 2 characters.";
+    if (!title.trim()) {
+      next.title = "Please add a title.";
+    }
     if (!subject) next.subject = "Please choose a subject.";
     if (!type) next.type = "Please choose an activity type.";
     if (!dueDate || Number.isNaN(new Date(dueDate).getTime())) {
